@@ -427,9 +427,57 @@ private:
 
 
 
+// CHECK IF THE GIVEN BST IS A VALID BST
+
+/*
+class Solution {
+public:
+    // Function to check if the tree is a valid BST
+    bool isValidBST(TreeNode* root) {
+        // Start with the minimum and maximum possible values
+        return isValidBST(root, LONG_MIN, LONG_MAX);
+    }
+
+private:
+    // Helper function to validate the BST
+    bool isValidBST(TreeNode* root, long minVal, long maxVal) {
+        // An empty tree is a valid BST
+        if (root == nullptr) return true;
+
+        // If the current node's value is not within the valid range, return false
+        if (root->val <= minVal || root->val >= maxVal) return false;
+
+        // Recursively check the left subtree (all values must be less than the current node's value)
+        // and the right subtree (all values must be greater than the current node's value)
+        return isValidBST(root->left, minVal, root->val) && 
+               isValidBST(root->right, root->val, maxVal);
+    }
+};*/
 
 
 
+// TO FIND LCA OF BST 
+
+/*
+ // Function to find the Lowest Common Ancestor of two nodes p and q in a BST
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        // Base case: If root is null, return null
+        if (root == nullptr) return nullptr;
+
+        int curr = root->val;  // Store the current node's value
+
+        // If both p and q are greater than current node, search in the right subtree
+        if (curr < p->val && curr < q->val) {
+            return lowestCommonAncestor(root->right, p, q);
+        }
+
+        // If both p and q are smaller than current node, search in the left subtree
+        if (curr > p->val && curr > q->val) {
+            return lowestCommonAncestor(root->left, p, q);
+        }
+
+        // If p and q are on either side of the current node or one of them is the current node
+        return root;  // Current node is the LCA*/
 
 
 
